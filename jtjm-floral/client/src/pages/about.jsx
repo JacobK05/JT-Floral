@@ -1,14 +1,10 @@
 import React from 'react';
-import Body from '../component/body';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const about = () => {
   return (
     <div>
-      <Head />
-      <Body />
-      <Footer />
+    <p> This should show up when clicked about</p>
     </div>
   );
 }
