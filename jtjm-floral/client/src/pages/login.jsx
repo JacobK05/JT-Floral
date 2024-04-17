@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import Head from '../component/head';
+import Head from '../component/header';
 import Footer from '../component/footer';
 import '../style/loginStyle.css';
 

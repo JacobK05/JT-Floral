@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from '../component/head';
+import Head from '../component/header';
 import Footer from '../component/footer';
 import '../style/signupStyle.css';
 
