@@ -1,9 +1,9 @@
 import React from "react";
-import logo from './asset/logo.png'
-
-export default function component() {
+import logo from '../asset/logo.png'
+export default function component(){ 
   return (
     <>
+    
       <div
         className="header-display-desktop"
         style={{
@@ -279,9 +279,9 @@ export default function component() {
                     marginRight: "1.1vw",
                   }}
                 >
-                  <a
+                <a
                     className="preFade fadeIn"
-                    href="/services"
+                     href="/services" 
                     style={{
                       background: "0px 0px",
                       cursor: "pointer",
@@ -296,9 +296,9 @@ export default function component() {
                       transitionDelay: "0.1s",
                       opacity: 1,
                     }}
-                  >
+                  > 
                     SERVICE
-                  </a>
+                  </a> 
                 </div>
                 <div
                   className="header-nav-item header-nav-item--collection"
@@ -432,6 +432,7 @@ body {
 `,
         }}
       />
+      
     </>
   );
 }

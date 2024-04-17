@@ -1,27 +1,28 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Index from './component/index';
-import Shop from './component/shop';
-import Services from './component/services';
-import Wedding from './component/wedding';
-import About from './component/about';
-import Contact from './component/contact';
+import Header from './component/header'
+import Body from './component/body'
+import Footer from './component/footer'
+import AboutPage from './pages/about'
+import ShopPage from './pages/shop'
+import WeddingPage from './pages/wedding'
+import ContactPage from './pages/contact'
+import ServicePage from './pages/services'
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <div className="App">
+      <Header/>
         <Switch>
-          <Route path="/" exact component={Index} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/shop" component={Shop} />
-          <Route path="/wedding" component={Wedding} />
-          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={AboutPage} />
+          <Route path="/contact" component={ContactPage} />
+          <Route path="/services" component={ServicePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/wedding" component={WeddingPage} />
         </Switch>
-      </div>
+     <Footer/>
     </Router>
   );
-}
+};
 
 export default App;
