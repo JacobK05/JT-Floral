@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Head from '../component/head';
+import Head from '../component/header';
 import Footer from '../component/footer';
 
 const Profile = () => {
