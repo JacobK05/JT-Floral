@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from './asset/logo.png';
+import logo from '../asset/logo.png';
 import axios from 'axios';
 
 export default function Component() {
@@ -7,21 +7,21 @@ export default function Component() {
   const [username, setUsername] = useState(""); 
 
   /
-  // const checkLoginStatus = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:3000/auth/login");
-  //     if (response.data.loggedIn) {
-  //       setLoggedIn(true);
-  //       setUsername(response.data.username);
-  //       console.log("User logged in:", response.data.username);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error:", error);
-  //   }
-  // };
+   const checkLoginStatus = async () => {
+     try {
+      const response = await axios.get("http://localhost:3000/auth/login");
+    if (response.data.loggedIn) {
+         setLoggedIn(true);
+         setUsername(response.data.username);
+       console.log("User logged in:", response.data.username);
+       }
+     } catch (error) {
+       console.error("Error:", error);
+     }
+   };
 
-  // useEffect(() => {
-  //   checkLoginStatus();
+   useEffect(() => {
+     checkLoginStatus();
 
   const handleLogout = async () => {
     try {
