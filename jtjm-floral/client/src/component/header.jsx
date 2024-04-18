@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../asset/logo.png'
+import logo from '../asset/logo2.png'
 export default function component(){ 
   return (
     <>
