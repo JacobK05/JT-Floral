@@ -36,7 +36,7 @@ export default function Footer() {
               position: "relative",
               display: "flex",
               maxWidth: "100%",
-              justifyContent: "flex-end", // Aligning to the right
+              justifyContent: "flex-end", 
               opacity: 1,
               paddingTop: "calc(0vmax)",
               paddingBottom: "calc(0vmax)",
@@ -82,7 +82,7 @@ export default function Footer() {
                         paddingTop: "0px",
                         paddingBottom: "0px",
                         justifyContent: "center",
-                        alignItems: "center", // Aligning to the center vertically
+                        alignItems: "center", 
                         clear: "both",
                       }}
                     >

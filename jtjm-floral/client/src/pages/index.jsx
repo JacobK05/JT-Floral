@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Head from '../component/header';
 import Footer from '../component/footer';

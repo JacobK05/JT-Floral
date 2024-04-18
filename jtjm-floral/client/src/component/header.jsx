@@ -561,7 +561,7 @@ export default function Component() {
               <a
                 className="preFade fadeIn"
                 href="#"
-                onClick={handleLogout} // Gọi hàm handleLogout khi click vào nút đăng xuất
+                onClick={handleLogout} 
                 style={{
                   background: "0px 0px",
                   cursor: "pointer",
