@@ -8,12 +8,12 @@ const Checkout = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [cardNumber, setCardNumber] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
-  const [isEditing, setIsEditing] = useState(false); // Trạng thái chỉnh sửa
+  const [isEditing, setIsEditing] = useState(false); 
 
 
   const handlePayment = () => {
  
-    console.log('Thanh toán thành công.');
+    console.log('Payment successful.');
   };
 
   return (

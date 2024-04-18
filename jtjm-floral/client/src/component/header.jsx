@@ -5,27 +5,32 @@ import axios from 'axios';
 export default function Component() {
  const [loggedIn, setLoggedIn] = useState(true); 
   const [username, setUsername] = useState(""); 
+  // 
+  // const checkLoginStatus = async () => {
+  //   try {
+  // 
+  //     const response = await axios.get("http://localhost:3000/auth/login");
+  //     if (response.data.loggedIn) {
+  //       
+  //       setLoggedIn(true);
+  //       setUsername(response.data.username);
+  //       console.log("User logged in:", response.data.username);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
 
-  /
-   const checkLoginStatus = async () => {
-     try {
-      const response = await axios.get("http://localhost:3000/auth/login");
-    if (response.data.loggedIn) {
-         setLoggedIn(true);
-         setUsername(response.data.username);
-       console.log("User logged in:", response.data.username);
-       }
-     } catch (error) {
-       console.error("Error:", error);
-     }
-   };
+  // useEffect(() => {
+  //   checkLoginStatus(); 
+  // }, []);
 
-   useEffect(() => {
-     checkLoginStatus();
-
+  
   const handleLogout = async () => {
     try {
+      
       await axios.post("http://localhost:3000/auth/logout");
+      
       setLoggedIn(false);
       setUsername("");
     } catch (error) {
@@ -317,7 +322,7 @@ export default function Component() {
                       opacity: 1,
                     }}
                   >
-                    SERVICES
+                    SERVICE
                   </a>
                 </div>
                 <div
@@ -425,7 +430,7 @@ export default function Component() {
           justifyContent: "center",
         }}
       >
-        {!loggedIn ? (
+        {!loggedIn ? ( 
           <>
             <div
               className="header-nav-item header-nav-item--collection"
@@ -556,7 +561,8 @@ export default function Component() {
               <a
                 className="preFade fadeIn"
                 href="#"
-                onClick={handleLogout} 
+                onClick={handleLogout} // Gọi hàm handleLogout khi click vào nút đăng xuất
+                style={{
                   background: "0px 0px",
                   cursor: "pointer",
                   transitionProperty: "opacity",
