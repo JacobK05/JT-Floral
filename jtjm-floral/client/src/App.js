@@ -1,11 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Index from './component/index';
-import Shop from './component/shop';
-import Services from './component/services';
-import Wedding from './component/wedding';
-import About from './component/about';
-import Contact from './component/contact';
+import Index from './pages/index';
+import Reserve from './pages/reserve';
+import Services from './pages/services';
+import About from './pages/about';
+import Contact from './pages/contact';
+import login from './pages/login';
+import signup from './pages/signup';
+import profile from './pages/profile';
+import cart from './pages/cart';
+import profile2 from './pages/profile2';
+import checkout from './pages/checkout';
 
 function App() {
   return (
@@ -15,9 +20,14 @@ function App() {
           <Route path="/" exact component={Index} />
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
-          <Route path="/shop" component={Shop} />
-          <Route path="/wedding" component={Wedding} />
+          <Route path="/reserve" component={Reserve} />
           <Route path="/contact" component={Contact} />
+          <Route path="/login" component={login} />
+          <Route path="/signup" component={signup} />
+          <Route path="/profile" component={profile} />
+          <Route path="/profile2" component={profile2} />
+          <Route path="/cart" component={cart} />
+          <Route path="/checkout" component={checkout} />
         </Switch>
       </div>
     </Router>
