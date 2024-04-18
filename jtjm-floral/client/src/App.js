@@ -8,12 +8,14 @@ import ShopPage from './pages/shop'
 import WeddingPage from './pages/wedding'
 import ContactPage from './pages/contact'
 import ServicePage from './pages/services'
+import HomePage from './pages/home'
 
 const App = () => {
   return (
     <Router>
       <Header/>
         <Switch>
+          <Route path='/' component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/contact" component={ContactPage} />
           <Route path="/services" component={ServicePage} />

@@ -1,0 +1,45 @@
+.homeH1 {
+    color: rgb(199, 146, 136);
+    font-family: 'fino';
+    font-size: 75px;
+    text-align: center;
+}
+
+.p-text {
+    color: rgb(199, 146, 136);
+    font-family: 'fino';
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+.signup-btn{
+
+    background: 0px 0px rgb(199, 146, 136);
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    border-color: rgb(255, 255, 255);
+    border-radius: 300px;
+    transition: opacity 0.1s linear 0s;
+    color: rgb(255, 255, 255);
+    font-family: Spectral;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    padding: 0.8em 1.336em;
+    border-width: 0px;
+    border-style: solid;
+    line-height: normal;
+    font-size: 15px;
+
+}
+
+.signup-btn:hover {
+    background-color: white;
+    color: rgb(199, 146, 136);
+}
+  
