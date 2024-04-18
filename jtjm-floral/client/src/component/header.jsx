@@ -1,7 +1,38 @@
-import React from "react";
-import logo from './asset/logo.png'
+import React, { useState, useEffect } from "react";
+import logo from './asset/logo.png';
+import axios from 'axios';
 
-export default function component() {
+export default function Component() {
+ const [loggedIn, setLoggedIn] = useState(true); 
+  const [username, setUsername] = useState(""); 
+
+  /
+  // const checkLoginStatus = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:3000/auth/login");
+  //     if (response.data.loggedIn) {
+  //       setLoggedIn(true);
+  //       setUsername(response.data.username);
+  //       console.log("User logged in:", response.data.username);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   checkLoginStatus();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("http://localhost:3000/auth/logout");
+      setLoggedIn(false);
+      setUsername("");
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <>
       <div
@@ -16,6 +47,7 @@ export default function component() {
           font: "16px / 16px sans-serif",
           lineHeight: "16px",
         }}
+        
       >
         <div
           className="header-burger menu-overlay-has-visible-non-navigation-items no-actions preFade"
@@ -158,25 +190,8 @@ export default function component() {
             alignItems: "center",
           }}
         >
-          <div
-            className="header-title preFade fadeIn"
-            style={{
-              backfaceVisibility: "hidden",
-              transitionProperty: "opacity",
-              flex: "1 1 33%",
-              width: "33%",
-              flexGrow: 1,
-              flexShrink: 1,
-              transitionTimingFunction: "ease",
-              transitionDuration: "1.5s",
-              transitionDelay: "0.025s",
-              opacity: 1,
-            }}
-          >
-            <div
-              className="header-title-logo"
-              style={{ width: "auto", fontSize: "0px" }}
-            >
+
+
               <a
                 className="preFade fadeIn"
                 href="/"
@@ -207,8 +222,7 @@ export default function component() {
                   }}
                 />
               </a>
-            </div>
-          </div>
+
           <div
             className="header-nav"
             style={{
@@ -218,12 +232,18 @@ export default function component() {
               flexGrow: 1,
               flexShrink: 1,
             }}
+            
           >
-            <div className="header-nav-wrapper">
+            <div className="header-nav-wrapper"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
               <nav
                 className="header-nav-list"
                 style={{
-                  display: "inline-flex",
+                  display: " inline-flex",
                   flexWrap: "wrap",
                   justifyContent: "center",
                 }}
@@ -297,7 +317,7 @@ export default function component() {
                       opacity: 1,
                     }}
                   >
-                    SERVICE
+                    SERVICES
                   </a>
                 </div>
                 <div
@@ -333,45 +353,10 @@ export default function component() {
                       opacity: 1,
                     }}
                   >
-                    SHOP
+                    RESERVE
                   </a>
                 </div>
-                <div
-                  className="header-nav-item header-nav-item--collection"
-                  style={{
-                    fontFamily: "Spectral",
-                    fontStyle: "normal",
-                    fontWeight: 400,
-                    lineHeight: "1.5em",
-                    letterSpacing: "-0.02em",
-                    textTransform: "none",
-                    fontSize: "calc(1.3 * 1rem)",
-                    whiteSpace: "nowrap",
-                    marginLeft: "1.1vw",
-                    marginRight: "1.1vw",
-                  }}
-                >
-                  <a
-                    className="preFade fadeIn"
-                    href="/wedding"
-                    style={{
-                      background: "0px 0px",
-                      cursor: "pointer",
-                      transitionProperty: "opacity",
-                      display: "block",
-                      textDecoration: "none",
-                      padding: "0.1em 0px",
-                      backfaceVisibility: "hidden",
-                      color: "hsla(0, 0%, 0%, 1)",
-                      transitionTimingFunction: "ease",
-                      transitionDuration: "1.5s",
-                      transitionDelay: "0.15s",
-                      opacity: 1,
-                    }}
-                  >
-                    WEDDING
-                  </a>
-                </div>
+
                 <div
                   className="header-nav-item header-nav-item--collection"
                   style={{
@@ -408,9 +393,226 @@ export default function component() {
                     CONTACT
                   </a>
                 </div>
-              </nav>
-            </div>
+                <div
+            className="header-nav"
+            style={{
+              flex: "1 1 34%",
+              width: "34%",
+              textAlign: "center",
+              flexGrow: 1,
+              flexShrink: 1,
+            }}
+          >
+           <div className="header-nav-wrapper">
+
+                    
+                   
+                    
+                  </div>
+                  
           </div>
+                
+              </nav>
+
+            </div>
+            
+          </div>
+                <nav
+        className="header-nav-list"
+        style={{
+          display: "inline-flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+        }}
+      >
+        {!loggedIn ? (
+          <>
+            <div
+              className="header-nav-item header-nav-item--collection"
+              style={{
+                fontFamily: "Spectral",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "1.5em",
+                letterSpacing: "-0.02em",
+                textTransform: "none",
+                fontSize: "calc(1.3 * 1rem)",
+                whiteSpace: "nowrap",
+                marginLeft: "1.1vw",
+                marginRight: "1.1vw",
+              }}
+            >
+              <a
+                className="preFade fadeIn"
+                href="/login"
+                style={{
+                  background: "0px 0px",
+                  cursor: "pointer",
+                  transitionProperty: "opacity",
+                  display: "block",
+                  textDecoration: "none",
+                  padding: "0.1em 0px",
+                  backfaceVisibility: "hidden",
+                  color: "hsla(0, 0%, 0%, 1)",
+                  transitionTimingFunction: "ease",
+                  transitionDuration: "1.5s",
+                  transitionDelay: "0.175s",
+                  opacity: 1,
+                }}
+              >
+                LOGIN
+              </a>
+            </div>
+            <div
+              className="header-nav-item header-nav-item--collection"
+              style={{
+                fontFamily: "Spectral",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "1.5em",
+                letterSpacing: "-0.02em",
+                textTransform: "none",
+                fontSize: "calc(1.3 * 1rem)",
+                whiteSpace: "nowrap",
+                marginLeft: "1.1vw",
+                marginRight: "1.1vw",
+              }}
+            >
+              <a
+                className="preFade fadeIn"
+                href="/signup"
+                style={{
+                  background: "0px 0px",
+                  cursor: "pointer",
+                  transitionProperty: "opacity",
+                  display: "block",
+                  textDecoration: "none",
+                  padding: "0.1em 0px",
+                  backfaceVisibility: "hidden",
+                  color: "hsla(0, 0%, 0%, 1)",
+                  transitionTimingFunction: "ease",
+                  transitionDuration: "1.5s",
+                  transitionDelay: "0.175s",
+                  opacity: 1,
+                }}
+              >
+                SIGN UP
+              </a>
+            </div>
+          </>
+        ) : ( 
+          <>
+            <div
+              className="header-nav-item header-nav-item--collection"
+              style={{
+                fontFamily: "Spectral",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "1.5em",
+                letterSpacing: "-0.02em",
+                textTransform: "none",
+                fontSize: "calc(1.3 * 1rem)",
+                whiteSpace: "nowrap",
+                marginLeft: "1.1vw",
+                marginRight: "1.1vw",
+              }}
+            >
+              <a
+                className="preFade fadeIn"
+                href="/profile"
+                style={{
+                  background: "0px 0px",
+                  cursor: "pointer",
+                  transitionProperty: "opacity",
+                  display: "block",
+                  textDecoration: "none",
+                  padding: "0.1em 0px",
+                  backfaceVisibility: "hidden",
+                  color: "hsla(0, 0%, 0%, 1)",
+                  transitionTimingFunction: "ease",
+                  transitionDuration: "1.5s",
+                  transitionDelay: "0.175s",
+                  opacity: 1,
+                }}
+              >
+                {username}MY PROFILE
+              </a>
+            </div>
+            {/* <div
+              className="header-nav-item header-nav-item--collection"
+              style={{
+                fontFamily: "Spectral",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "1.5em",
+                letterSpacing: "-0.02em",
+                textTransform: "none",
+                fontSize: "calc(1.3 * 1rem)",
+                whiteSpace: "nowrap",
+                marginLeft: "1.1vw",
+                marginRight: "1.1vw",
+              }}
+            >
+              <a
+                className="preFade fadeIn"
+                href="#"
+                onClick={handleLogout} 
+                  background: "0px 0px",
+                  cursor: "pointer",
+                  transitionProperty: "opacity",
+                  display: "block",
+                  textDecoration: "none",
+                  padding: "0.1em 0px",
+                  backfaceVisibility: "hidden",
+                  color: "hsla(0, 0%, 0%, 1)",
+                  transitionTimingFunction: "ease",
+                  transitionDuration: "1.5s",
+                  transitionDelay: "0.175s",
+                  opacity: 1,
+                }}
+              >
+                LOGOUT
+              </a>
+            </div> */}
+          </>
+                      )}
+                       <div
+                  className="header-nav-item header-nav-item--collection"
+                  style={{
+                    fontFamily: "Spectral",
+                    fontStyle: "normal",
+                    fontWeight: 400,
+                    lineHeight: "1.5em",
+                    letterSpacing: "-0.02em",
+                    textTransform: "none",
+                    fontSize: "calc(1.3 * 1rem)",
+                    whiteSpace: "nowrap",
+                    marginLeft: "1.1vw",
+                    marginRight: "1.1vw",
+                  }}
+                >
+                  <a
+                    className="preFade fadeIn"
+                    href="/cart"
+                    style={{
+                      background: "0px 0px",
+                      cursor: "pointer",
+                      transitionProperty: "opacity",
+                      display: "block",
+                      textDecoration: "none",
+                      padding: "0.1em 0px",
+                      backfaceVisibility: "hidden",
+                      color: "hsla(0, 0%, 0%, 1)",
+                      transitionTimingFunction: "ease",
+                      transitionDuration: "1.5s",
+                      transitionDelay: "0.175s",
+                      opacity: 1,
+                    }}
+                  >
+                    MY CART
+                  </a>
+                </div>
+                    </nav>
         </div>
       </div>
       <style
@@ -435,3 +637,6 @@ body {
     </>
   );
 }
+
+
+
