@@ -1,6 +1,7 @@
 import React from "react";
 import logoFooter from '../asset/logo_footer.png'
-export default function footer() {
+
+export default function Footer() {
   return (
     <>
       <footer
@@ -26,28 +27,6 @@ export default function footer() {
           }}
         >
           <div
-            className="section-border"
-            style={{
-              position: "absolute",
-              top: "calc(-1 * var(--previous-section-divider-offset, 0px))",
-              right: "0px",
-              bottom: "0px",
-              left: "0px",
-              backgroundColor: "hsla(0, 0%, 100%, 1)",
-            }}
-          >
-            <div
-              className="section-background"
-              style={{
-                overflow: "hidden",
-                pointerEvents: "none",
-                inset: "0px",
-                position: "absolute",
-                backgroundColor: "hsla(0, 0%, 100%, 1)",
-              }}
-            />
-          </div>
-          <div
             id="yui_3_17_2_1_1712256086021_100"
             className="content-wrapper"
             style={{
@@ -57,7 +36,7 @@ export default function footer() {
               position: "relative",
               display: "flex",
               maxWidth: "100%",
-              justifyContent: "center",
+              justifyContent: "flex-end", 
               opacity: 1,
               paddingTop: "calc(0vmax)",
               paddingBottom: "calc(0vmax)",
@@ -103,6 +82,7 @@ export default function footer() {
                         paddingTop: "0px",
                         paddingBottom: "0px",
                         justifyContent: "center",
+                        alignItems: "center", 
                         clear: "both",
                       }}
                     >
@@ -166,15 +146,6 @@ export default function footer() {
                                   width={350}
                                   sizes="(max-width: 640px) 100vw, (max-width: 767px) 100vw, 25vw"
                                   src={logoFooter}
-                                  srcSet={`
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=100w   100w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=300w   300w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=500w   500w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=750w   750w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=1000w 1000w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=1500w 1500w,
-                                                                        https://images.squarespace-cdn.com/content/v1/65e1281dfc013f4cb6afe0cc/1a5a4493-447a-4e6d-8fd2-d7e25c32b116/L%26T+floral+%281%29.png?format=2500w 2500w
-                                                                    `}
                                   style={{
                                     border: "0px",
                                     width: "100%",
@@ -201,161 +172,6 @@ export default function footer() {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className="fe-block fe-block-8c05ddb347156aeac7e7"
-                    style={{
-                      gridArea: "3 / 17 / 5 / 26",
-                      zIndex: 1,
-                      mixBlendMode: "normal",
-                    }}
-                  >
-                    <div
-                      id="block-8c05ddb347156aeac7e7"
-                      className="sqs-block html-block sqs-block-html"
-                      style={{
-                        position: "relative",
-                        clear: "none",
-                        borderColor: "hsla(0, 0%, 0%, 1)",
-                        display: "flex",
-                        height: "100%",
-                        width: "100%",
-                        flexDirection: "column",
-                        paddingTop: "0px",
-                        paddingBottom: "0px",
-                        justifyContent: "flex-start",
-                        
-                      }}
-                    >
-                      <div
-                        className="sqs-block-content preFade fadeIn"
-                        style={{
-                          transitionProperty: "opacity",
-                          outline: "none",
-                          position: "relative",
-                          zIndex: 0,
-                          transitionTimingFunction: "ease",
-                          transitionDuration: "1.5s",
-                          transitionDelay: "0.55s",
-                          opacity: 1,
-                        }}
-                      >
-                        <div
-                          className="sqs-html-content"
-                          style={{
-                            outline: "none",
-                            overflowWrap: "break-word",
-                          }}
-                        >
-                          <h4
-                            className="preFade fadeIn"
-                            style={{
-                              margin: "2rem 0px",
-                              fontFamily: "fino",
-                              fontStyle: "normal",
-                              fontWeight: 400,
-                              letterSpacing: "0em",
-                              textTransform: "uppercase",
-                              lineHeight:
-                                "calc(\n    1.2em *\n      (1 + (1 - 2.5) / 25)\n  )",
-                              fontSize: "calc(2.5 * 1rem)",
-                              color: "hsla(0, 0%, 0%, 1)",
-                              transitionProperty: "opacity",
-                              overflowWrap: "break-word",
-                              marginTop: "0px",
-                              marginBottom: "0px",
-                              whiteSpace: "pre-wrap",
-                              transitionTimingFunction: "ease",
-                              transitionDuration: "1.5s",
-                              transitionDelay: "0.575s",
-                              opacity: 1,
-                            }}
-                          >
-                            <a
-                              href="https://squarespace.com/"
-                              target="_blank"
-                              style={{
-                                background: "0px 0px",
-                                cursor: "pointer",
-                                whiteSpace: "initial",
-                                backgroundPosition: "unset",
-
-                                backgroundRepeat: "unset",
-                                backgroundImage: "unset",
-                                backgroundSize: "unset",
-                                color: "hsla(9.52, 36%, 65.69%, 1)",
-                                overflowWrap: "break-word",
-                                display: "inline-block",
-                                textDecoration: "none"
-                              }}
-                            >
-                              <span
-                                className="sqsrte-text-color--accent"
-                                style={{
-
-                                  color: "hsl(9.52, 36%, 65.69%)",
-                                  overflowWrap: "break-word",
-                                }}
-                              >
-                                Facebook
-                              </span>
-                            </a>
-
-                          </h4>
-                        </div>
-
-                        <div
-                          className="TextShape-node"
-                          style={{
-                            transition:
-                              "opacity 0.25s ease-out 0s, visibility 0.25s ease-out 0s",
-                            position: "absolute",
-                            display: "block",
-                            pointerEvents: "none",
-                            zIndex: -1,
-                            userSelect: "none",
-                            visibility: "visible",
-                            mixBlendMode: "none",
-                            overflowWrap: "break-word",
-                            marginBottom: "0px",
-                            fontSize: "40px",
-                            opacity: 1,
-                            transform: "scale(1)",
-                            width: "177px",
-                            height: "48px",
-                            left: "-4px",
-                            top: "179px",
-                          }}
-                        >
-                          <svg
-                            style={{
-                              overflow: "visible",
-                              position: "absolute",
-                              display: "block",
-                              top: "0px",
-                              left: "0px",
-                              width: "100%",
-                              height: "100%",
-                              stroke: "hsla(9.52, 36%, 65.69%, 1)",
-                              strokeWidth: "max(1px, 0.05em)",
-                              strokeLinecap: "square",
-                              strokeLinejoin: "bevel",
-                              fill: "none",
-                              opacity: "undefined",
-                              overflowWrap: "break-word",
-                            }}
-                          >
-                            <path
-                              d="M0,43.2 L177,43.2"
-                              strokeDasharray="177"
-                              strokeDashoffset="354"
-                              vectorEffect="non-scaling-stroke"
-                              style={{ overflowWrap: "break-word" }}
-                            />
-                          </svg>
                         </div>
                       </div>
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import './about.css'
-import logo from '../asset/logo.png'
+import Head from '../component/header';
+import Footer from '../component/footer';
 
 const about = () => {
   return (
