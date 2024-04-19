@@ -10,6 +10,10 @@ const serviceSchema = new Schema({
         type: String,
         required: true,
     },
+    deposit: {
+        type: Number,
+        required: true,
+    }
     });
 
 const Service = model('Service', serviceSchema);
