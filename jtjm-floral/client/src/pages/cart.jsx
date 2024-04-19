@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
@@ -33,7 +32,7 @@ const Cart = () => {
 
   return (
     <div>
-      <Head />
+      
 
       <style
         dangerouslySetInnerHTML={{
@@ -146,7 +145,7 @@ const Cart = () => {
 </Link>
       </div>
 
-      <Footer />
+      
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const Home = () => {
   const history = useHistory(); 
@@ -41,7 +40,7 @@ const Home = () => {
 
   return (
     <div>
-      <Head />
+      
       <section className="login-section">
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Login</h2>
         <form onSubmit={handleSubmit} style={{ maxWidth: '300px', margin: '0 auto' }}>
@@ -74,7 +73,7 @@ const Home = () => {
           <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: 'C79288', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Login</button>
         </form>
       </section>
-      <Footer />
+      
     </div>
   );
 };

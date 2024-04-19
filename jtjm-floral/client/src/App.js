@@ -11,6 +11,8 @@ import profile from './pages/profile';
 import cart from './pages/cart';
 import profile2 from './pages/profile2';
 import checkout from './pages/checkout';
+import Header from './component/header'
+import Footer from './component/footer';
 
 const App = () => {
   return (

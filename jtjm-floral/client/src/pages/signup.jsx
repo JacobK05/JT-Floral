@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const Home = () => {
   const [fullname, setFullname] = useState('');
@@ -34,7 +33,7 @@ const Home = () => {
 
   return (
     <div>
-      <Head />
+      
       <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Sign Up</h2>
       <section className="signup-section" style={{ maxWidth: '300px', margin: '0 auto' }}>
         
@@ -185,7 +184,7 @@ const Home = () => {
           <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#C79288', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Sign Up</button>
         </form>
       </section>
-      <Footer />
+    
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const Profile = () => {
   const [loggedIn, setLoggedIn] = useState(false); 
@@ -31,7 +30,7 @@ const Profile = () => {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Head />
+      
       <div style={{ backgroundColor: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>
         {loggedIn && userData ? (
           <div>
@@ -50,7 +49,7 @@ const Profile = () => {
           </div>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };

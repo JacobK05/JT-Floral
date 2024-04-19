@@ -1,13 +1,12 @@
 
 import React from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 import floral from '../asset/floral.jpg';
 import wedding from '../asset/wedding.jpg';
 const services = () => {
   return (
     <div>
-      <Head />
+     
       <div
         id="yui_3_17_2_1_1712257521766_102"
         className="content"
@@ -829,7 +828,7 @@ body {
 `,
         }}
       />
-      <Footer />
+     
     </div>
   );
 }
