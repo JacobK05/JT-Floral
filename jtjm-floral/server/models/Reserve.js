@@ -1,6 +1,6 @@
 const { Schema, model} = require('mongoose');
 
-const userServiceSchema = new Schema({
+const reserveSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -19,6 +19,6 @@ const userServiceSchema = new Schema({
     },
     });
     
-const UserService = model('UserService', userServiceSchema);
+const Reserve = model('Reserve', reserveSchema);
 
-module.exports = UserService;
+module.exports = Reserve;

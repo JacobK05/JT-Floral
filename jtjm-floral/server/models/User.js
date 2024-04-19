@@ -19,10 +19,10 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    orders: [
+    reserve: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Order',
+            ref: 'Reserve',
         },
     ],
 });
