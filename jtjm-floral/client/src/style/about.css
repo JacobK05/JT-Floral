@@ -1,0 +1,18 @@
+.about-container {
+    display: flex;
+    align-items: center; /* Vertically center items */
+  }
+  
+  .text-block {
+    width: 60%;
+  }
+  
+  .image-block-wrapper {
+    width: 40%;
+  }
+  
+  .logo {
+    width: 100%;
+    height: auto;
+  }
+  
