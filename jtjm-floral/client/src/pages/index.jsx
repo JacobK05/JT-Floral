@@ -82,7 +82,7 @@ const Home = () => {
                           textTransform: "uppercase",
                           lineHeight:
                             "calc(\n    1.2em *\n      (1 + (1 - 7) / 25)\n  )",
-                          fontSize: "calc(7 * 1rem)",
+                          fontSize: "calc(5 * 1rem)",
                           color: "hsla(0, 0%, 0%, 1)",
                           transitionProperty: "opacity",
                           marginTop: "0px",
@@ -102,8 +102,19 @@ const Home = () => {
                             color: "hsl(9.52, 36%, 65.69%)",
                             overflowWrap: "break-word",
                           }}
-                        >{`welcome to l&t             floral`}</span>
+                        >{`Welcome to JTJM Floral`}</span>
                       </h1>
+                      <p
+                        className="tagline"
+                        style={{
+                          fontSize: "32px",
+                          textAlign: "center",
+                          margin: "0",
+                          color: "hsl(9.52, 36%, 65.69%)",
+                        }}
+                      >
+                        Where you dream wedding begins
+                      </p>
                     </div>
                   </div>
                 </div>
