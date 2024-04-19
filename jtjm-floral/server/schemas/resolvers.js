@@ -4,7 +4,7 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return await User.find();
+            return await User.find().populate('services');
         },
         
         services: async () => {
@@ -14,6 +14,7 @@ const resolvers = {
         reserves: async () => {
             return await Reserve.find({}).populate('users');
         },
+
      },
 
     Mutation: {
