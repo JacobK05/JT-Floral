@@ -1,6 +1,5 @@
 import React from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const about = () => {
   return (
@@ -12,7 +11,7 @@ const about = () => {
     of expressing possible emotions or sending sweet messages of
     love for life's harshest moments. 
     </p>
-    <img src={logo} className='img'></img>
+    <img className='img'></img>
     <p className='p2'> We provide flower arrangement services such as bouquets, funeral
     flowers, flower decorations, and flower gifts. We are proud to
     own a team of professional - fun - friendly wedding

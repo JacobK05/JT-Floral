@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 const Checkout = () => {
   
@@ -17,7 +16,7 @@ const Checkout = () => {
 
   return (
     <div>
-      <Head />
+      
       <div style={contentStyle}>
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Checkout</h2>
         <section className="profile-section" style={{ maxWidth: '300px', margin: '0 auto' }}>
@@ -94,7 +93,7 @@ const Checkout = () => {
           </button>
         </section>
       </div>
-      <Footer />
+      
     </div>
   );
 };

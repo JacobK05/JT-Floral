@@ -1,7 +1,6 @@
 
 import React from 'react';
-import Head from '../component/header';
-import Footer from '../component/footer';
+
 
 import bouquet from '../asset/flowerboquet.jpeg';
 import funeral from '../asset/funeralfloral.jpeg';
@@ -17,7 +16,7 @@ import mc from '../asset/mc.jpg';
 const Home = () => {
   return (
     <div>
-      <Head />
+    
       <div
   className="products-flex-container"
   style={{
@@ -2171,7 +2170,7 @@ body {
 `,
         }}
       />
-      <Footer />
+   
     </div>
   );
 }
