@@ -1,5 +1,5 @@
 const Service= require('./Service');
 const User = require('./User');
-const userService = require('./userService');
+const Reserve = require('./Reserve');
 
-module.exports = { Service, User, userService }
+module.exports = { Service, User, Reserve }

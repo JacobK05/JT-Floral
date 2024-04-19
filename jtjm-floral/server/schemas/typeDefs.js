@@ -13,20 +13,19 @@ type Service {
   price: Int
 }
 
-type userService {
-    _id: ID
-    name: String
-    service: String
-    description: String
-    price: Int
-
+type Reserve {
+  _id: ID
+  name: String
+  service: String
+  description: String
+  price: Int
 }
 
-type Query {
-    users: [User]
-  user(_id: ID!): User
-  services: [Service]
-  service(_id: ID!): Service
+type Mutation {
+  addUser(username: String!, email: String!, password: String!): Auth
+  login(email: String!, password: String!): Auth
+  addReserve(name: String!, service: String!, description: String!, price: Int!): Reserve
+  removeReserve(reserveId: ID!): Reserve
 }`
 
 module.exports = typeDefs;
