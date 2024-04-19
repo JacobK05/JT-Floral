@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from '../asset/logo.png';
+import logo from '../asset/logo2.png';
 import axios from 'axios';
 
 export default function Component() {
