@@ -1,26 +1,33 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './component/header'
-import Body from './component/body'
-import Footer from './component/footer'
-import AboutPage from './pages/about'
-import ShopPage from './pages/shop'
-import WeddingPage from './pages/wedding'
-import ContactPage from './pages/contact'
-import ServicePage from './pages/services'
-import HomePage from './pages/home'
+import Index from './pages/index';
+import Reserve from './pages/reserve';
+import Services from './pages/services';
+import About from './pages/about';
+import Contact from './pages/contact';
+import login from './pages/login';
+import signup from './pages/signup';
+import profile from './pages/profile';
+import cart from './pages/cart';
+import profile2 from './pages/profile2';
+import checkout from './pages/checkout';
 
 const App = () => {
   return (
     <Router>
       <Header/>
         <Switch>
-          <Route path='/' component={HomePage} />
-          <Route path="/about" component={AboutPage} />
-          <Route path="/contact" component={ContactPage} />
-          <Route path="/services" component={ServicePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route path="/wedding" component={WeddingPage} />
+          <Route path="/" exact component={Index} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+          <Route path="/shop" component={Reserve} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/login" component={login} />
+          <Route path="/signup" component={signup} />
+          <Route path="/profile" component={profile} />
+          <Route path="/profile2" component={profile2} />
+          <Route path="/cart" component={cart} />
+          <Route path="/checkout" component={checkout} />
         </Switch>
      <Footer/>
     </Router>
