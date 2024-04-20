@@ -6,7 +6,7 @@ const resolvers = {
         users: async () => {
             return await User.find().populate('services');
         },
-        
+
         services: async () => {
             return await Service.find({}).populate('users');
         },
@@ -15,11 +15,19 @@ const resolvers = {
             return await Reserve.find({}).populate('users');
         },
 
-     },
+    },
 
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
+        addUser: async (parent, { username, email, password, fullName, phoneNumber, address, service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod }) => {
+            const reserve = await Reserve.create({
+                service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod
+            })
+            const user = await User.create({
+                username, email,
+                password, fullName, phoneNumber, address
+            });
+            await User.findOneAndUpdate({ _id: user._id }, { $push: { reserves: reserve._id } })
+
             const token = signToken(user);
             return { token, user };
         },
@@ -45,7 +53,7 @@ const resolvers = {
         removeReserve: async (parent, { reserveId }) => {
             return await Reserve.findOneAndDelete({ _id: reserveId });
         },
-    },    
+    },
 };
 
 

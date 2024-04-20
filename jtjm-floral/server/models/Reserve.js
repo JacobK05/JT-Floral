@@ -1,10 +1,7 @@
 const { Schema, model} = require('mongoose');
 
 const reserveSchema = new Schema({
-    name: {
-        type: String,
-        required: true,
-    },
+    
     service: {
         type: String,
         required: true,
@@ -25,7 +22,7 @@ const reserveSchema = new Schema({
         type: String,
         required: true,
     },
-    FavoriteStyle: {
+    favoriteStyle: {
         type: String,
         required: true,
     },
@@ -38,7 +35,7 @@ const reserveSchema = new Schema({
         required: true,
     },
     contactMethod: {
-        type: Number,
+        type: String,
         required: true,
     },
     });
