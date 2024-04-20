@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'; 
+import { useMutation } from '@apollo/client';
+import {LOGIN_USER, Login} from "../utils/mutations"
+import Auth from "../utils/auth"
 
 
 const Home = () => {
@@ -9,33 +12,14 @@ const Home = () => {
   const [loginError, setLoginError] = useState(null); 
   const [loggedIn, setLoggedIn] = useState(false); 
   const [userData, setUserData] = useState({}); 
+const [formData,setFormData]= useState({})
+const [Login]= useMutation(LOGIN_USER)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch('http://localhost:3000/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setLoggedIn(true);
-        setUserData(data);
-        console.log('Login successful');
-        history.push('/profile');
-      } else {
-        console.error('Login failed');
-        setLoginError('Invalid username or password'); 
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setLoginError('An error occurred. Please try again later.'); 
-    }
+console.log (formData)
+const {data}= await Login({variables:formData})
+ Auth.login(data.login.token)   
   };
 
   return (
@@ -45,13 +29,13 @@ const Home = () => {
         <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Login</h2>
         <form onSubmit={handleSubmit} style={{ maxWidth: '300px', margin: '0 auto' }}>
           <div className="form-group">
-            <label htmlFor="username" style={{ display: 'block', marginBottom: '5px' }}>Username</label>
+            <label htmlFor="email" style={{ display: 'block', marginBottom: '5px' }}>email</label>
             <input
               type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={(e) => setFormData({...formData,email:e.target.value})}
               style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
             />
           </div>
@@ -61,8 +45,8 @@ const Home = () => {
               type="password"
               id="password"
               name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={(e) => setFormData({...formData,password:e.target.value})}
               style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
             />
           </div>
