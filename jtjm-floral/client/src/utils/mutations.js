@@ -24,4 +24,16 @@ export const LOGIN_USER = gql`
     }
   }
 
-`
+`;
+
+export const ADD_SERVICE = gql`
+  mutation addService($service: String!, $description: String!, $price: Float!) {
+    addService(service: $service, description: $description, price: $price) {
+      _id
+      service
+      description
+      price
+    }
+  }
+
+`;
