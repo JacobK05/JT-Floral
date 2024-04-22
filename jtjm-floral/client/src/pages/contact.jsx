@@ -313,6 +313,6 @@ body {
       />
     </div>
   );
-}
+};
 
 export default Home;

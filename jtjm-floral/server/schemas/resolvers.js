@@ -4,41 +4,37 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
     Query: {
         users: async () => {
-            return await User.find().populate('carts');
+            return await User.find().populate('services');
         },
 
-        user: async (parent, { username }) => {
-            return await User.findOne({ username }).populate('carts');
-        },    
-        
         services: async () => {
-            return await Service.find({});
+            return await Service.find({}).populate('users');
         },
 
-        service: async (parent, { name }) => {
-            return await Service.findOne({ name });
+        reserves: async () => {
+            return await Reserve.find({}).populate('users');
         },
 
-        carts: async () => {
-            return await Cart.find().populate('services');
-        },
-
-        cart: async (parent, { _id }) => {
-            return await Cart.findById(_id).populate('services');
-
-        },
-
-    },    
+    },
 
     Mutation: {
-        addUser: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
+        addUser: async (parent, { username, email, password, fullName, phoneNumber, address, service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod }) => {
+            const reserve = await Reserve.create({
+                service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod
+            })
+            const user = await User.create({
+                username, email,
+                password, fullName, phoneNumber, address
+            });
+            await User.findOneAndUpdate({ _id: user._id }, { $push: { reserves: reserve._id } })
+
             const token = signToken(user);
             return { token, user };
         },
 
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
+            console.log(user)
             if (!user) {
                 throw new AuthenticationError('Incorrect credentials');
             }
@@ -50,33 +46,15 @@ const resolvers = {
             return { token, user };
         },
 
-        addService: async (parent, { name, price, image, cartId }) => {
-            const newService = await Service.create({ name, price, image });
-            const updatedCart = await Cart.findOneAndUpdate(
-                { _id: cartId },
-                { $addToSet: { services: newService._id } }
-            );
-            return newService;
+        addReserve: async (parent, { name, service, description, price }) => {
+            const newReserve = await Reserve.create({ name, service, description, price });
+            return newReserve;
         },
 
-        addCart: async (parent, { event, userId }) => {
-            const newCart = await Cart.create({ event });
-            const updatedUser = await User.findOneAndUpdate(
-                { _id: userId },
-                { $addToSet: { carts: newCart._id } }
-            );
-            return newCart;
+        removeReserve: async (parent, { reserveId }) => {
+            return await Reserve.findOneAndDelete({ _id: reserveId });
         },
-
-        // addReserve: async (parent, { name, service, description, price }) => {
-        //     const newReserve = await Reserve.create({ name, service, description, price });
-        //     return newReserve;
-        // },
-
-        // removeReserve: async (parent, { reserveId }) => {
-        //     return await Reserve.findOneAndDelete({ _id: reserveId });
-        // },
-    },    
+    },
 };
 
 

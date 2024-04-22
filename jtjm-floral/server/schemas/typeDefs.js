@@ -34,7 +34,7 @@ type Query {
 }
 
 type Mutation {
-  addUser(username: String!, email: String!, password: String!): Auth
+  addUser(username: String!, email: String!, password: String!, fullName: String!, phoneNumber: String!, address: String!, service: String!, description: String!, price: Int!, eventStartDate: String!, serviceStartDate: String!,favoriteStyle: String!, budget: Int!, contactPerson: String!, contactMethod: String! ): Auth
   login(email: String!, password: String!): Auth
   addService(name: String!, price: Int!, image: String!, cartId: ID!): Service
   addCart(event: String!, userId: ID!): Cart
