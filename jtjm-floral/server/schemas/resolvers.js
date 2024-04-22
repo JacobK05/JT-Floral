@@ -1,4 +1,4 @@
-const { User, Service, Reserve } = require('../models');
+const { User, Service, Cart } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {

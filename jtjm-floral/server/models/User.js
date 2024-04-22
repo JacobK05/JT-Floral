@@ -38,10 +38,10 @@ const userSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    reserve: [
+    carts: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Reserve',
+            ref: 'Cart',
         },
     ],
 });
