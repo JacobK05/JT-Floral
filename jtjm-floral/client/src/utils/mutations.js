@@ -28,6 +28,7 @@ export const ADD_SERVICE = gql`
       price
     }
   }
+`
 
 export const ADD_RESERVE = gql`
 mutation addReserve($name: String!, $service: String!, $description: String!, $price: Float!) {

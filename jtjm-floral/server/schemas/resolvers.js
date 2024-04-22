@@ -20,7 +20,7 @@ const resolvers = {
     Mutation: {
         addUser: async (parent, { username, email, password, fullName, phoneNumber, address, service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod }) => {
             const reserve = await Reserve.create({
-                service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod
+               service, description, price, eventStartDate, serviceStartDate, favoriteStyle, budget, contactPerson, contactMethod
             })
             const user = await User.create({
                 username, email,
