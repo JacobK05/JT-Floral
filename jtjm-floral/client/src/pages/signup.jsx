@@ -63,7 +63,7 @@ const Home = () => {
               style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
             />
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="address" style={{ display: 'block', marginBottom: '5px' }}>Address</label>
             <input
               type="text"
@@ -72,7 +72,7 @@ const Home = () => {
               value={formData.address}
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
-            />
+  /> */}
           </div>
           <div className="form-group">
             <label htmlFor="username" style={{ display: 'block', marginBottom: '5px' }}>Username</label>
@@ -97,7 +97,7 @@ const Home = () => {
             />
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="service" style={{ display: 'block', marginBottom: '5px' }}>What service do you need?</label>
             <input
               type="text"
@@ -212,7 +212,7 @@ const Home = () => {
               value={formData.contactMethod}
               onChange={(e) => setFormData({ ...formData, contactMethod: e.target.value })}
             />
-          </div>
+          </div> */}
 
 
           <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#C79288', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Sign Up</button>
