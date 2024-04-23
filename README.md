@@ -39,23 +39,22 @@ WHEN I click About tab on navigation bar
 THEN I am presented informations such as introduce, how to service as a customer of the company
 WHEN I click Services tab on navigation bar
 THEN I am presented two options of services they providing, that are Florals and Wedding Planner
-WHEN I Click Shop on the naviagtion bar
+WHEN I Click Reserve on the naviagtion bar
 THEN I am presents services they providing about florals and wedding planner with a deposit fee that i will pay to start a service
-WHEN I click Add to cart button
+WHEN I click Reserve button
 THEN a service will added into my cart that i can make a payment later
-WHEN I click on Wedding tab on navigation bar
-THEN I am presented all services they provding for a wedding and the photo albums that they made for previous customers.
-WHEN I click Book a service
-THEN I am redirected to the Shop page where all services and the deposit prices displayed.
 WHEN I click Contact tab on navigation bar
 THEN I have a form to fill out my name, email, and message content and send them a message that they can contact me back for consultance.
+WHEN I click on My Profille
+THEN I have options for sign up or login to see my profile where can i recieve promotion, discount coupons,..
 WHEN I click on My Cart button
 THEN I can see all the service product that i added before and process the payment.
-WHEN I click on Login button
-THEN I can create a new account or login to my account where can i recieve promotion, discount coupons,..
 ```
 
 ## Usage
 
+Launch the webiste at  **[JTJM Floral](https://jtjm-floral.onrender.com/)**
 
 ## Screenshot
+
+![Screenshot](./jtjm-floral/client/src/asset/screenshot.gif)
