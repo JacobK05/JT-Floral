@@ -57,3 +57,4 @@ Launch the webiste at  **[JTJM Floral](https://jtjm-floral.onrender.com/)**
 
 ## Screenshot
 
+![Screenshot](./jtjm-floral/client/src/asset/screenshot.gif)
